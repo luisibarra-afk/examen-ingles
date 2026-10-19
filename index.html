@@ -33,9 +33,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 20px;
   }
-  .datos-grid .full {
-    grid-column: 1 / -1;
-  }
   .datos label {
     display: block;
     font-weight: bold;
@@ -147,10 +144,10 @@
 </div>
 
 <div class="instrucciones">
-  <strong>Instrucciones generales:</strong> Lee cada pregunta y selecciona la opción correcta (a, b, c o d). Valor total: 50 puntos (1 pt c/u).
+  <strong>Instrucciones generales:</strong> Lee cada pregunta y selecciona la opción correcta (a, b, c o d). 30 preguntas, calificación final en escala 0-10.
 </div>
 
-<h2>I. COMMANDS (10 pts)</h2>
+<h2>I. COMMANDS</h2>
 
 <div class="pregunta"><p class="texto">1. "Abre la ventana."</p><div class="opciones">
 <label><input type="radio" name="q1" value="a"> a) Close the window</label>
@@ -194,320 +191,180 @@
 <label><input type="radio" name="q6" value="d"> d) Read quickly</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">7. "Camina, no corras."</p><div class="opciones">
-<label><input type="radio" name="q7" value="a"> a) Run, don't walk</label>
-<label><input type="radio" name="q7" value="b"> b) Walk, don't run</label>
-<label><input type="radio" name="q7" value="c"> c) Jump, don't walk</label>
-<label><input type="radio" name="q7" value="d"> d) Stop running</label>
+<h2>II. ORDINAL NUMBERS</h2>
+
+<div class="pregunta"><p class="texto">7. 1st in English is:</p><div class="opciones">
+<label><input type="radio" name="q7" value="a"> a) one</label>
+<label><input type="radio" name="q7" value="b"> b) first</label>
+<label><input type="radio" name="q7" value="c"> c) once</label>
+<label><input type="radio" name="q7" value="d"> d) won</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">8. "Saca tu cuaderno."</p><div class="opciones">
-<label><input type="radio" name="q8" value="a"> a) Take out your notebook</label>
-<label><input type="radio" name="q8" value="b"> b) Put away your book</label>
-<label><input type="radio" name="q8" value="c"> c) Close your notebook</label>
-<label><input type="radio" name="q8" value="d"> d) Open the window</label>
+<div class="pregunta"><p class="texto">8. 3rd in English is:</p><div class="opciones">
+<label><input type="radio" name="q8" value="a"> a) three</label>
+<label><input type="radio" name="q8" value="b"> b) third</label>
+<label><input type="radio" name="q8" value="c"> c) tree</label>
+<label><input type="radio" name="q8" value="d"> d) thirty</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">9. "Cierra la puerta."</p><div class="opciones">
-<label><input type="radio" name="q9" value="a"> a) Open the door</label>
-<label><input type="radio" name="q9" value="b"> b) Close the door</label>
-<label><input type="radio" name="q9" value="c"> c) Close the window</label>
-<label><input type="radio" name="q9" value="d"> d) Open the window</label>
+<div class="pregunta"><p class="texto">9. 5th in English is:</p><div class="opciones">
+<label><input type="radio" name="q9" value="a"> a) five</label>
+<label><input type="radio" name="q9" value="b"> b) fifth</label>
+<label><input type="radio" name="q9" value="c"> c) fived</label>
+<label><input type="radio" name="q9" value="d"> d) fives</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">10. "Repite, por favor."</p><div class="opciones">
-<label><input type="radio" name="q10" value="a"> a) Repeat, please</label>
-<label><input type="radio" name="q10" value="b"> b) Listen, please</label>
-<label><input type="radio" name="q10" value="c"> c) Write, please</label>
-<label><input type="radio" name="q10" value="d"> d) Erase, please</label>
+<div class="pregunta"><p class="texto">10. 8th in English is:</p><div class="opciones">
+<label><input type="radio" name="q10" value="a"> a) eight</label>
+<label><input type="radio" name="q10" value="b"> b) eighth</label>
+<label><input type="radio" name="q10" value="c"> c) eightieth</label>
+<label><input type="radio" name="q10" value="d"> d) eighty</label>
 </div></div>
 
-<h2>II. ORDINAL NUMBERS (10 pts)</h2>
-
-<div class="pregunta"><p class="texto">11. 1st in English is:</p><div class="opciones">
-<label><input type="radio" name="q11" value="a"> a) one</label>
-<label><input type="radio" name="q11" value="b"> b) first</label>
-<label><input type="radio" name="q11" value="c"> c) once</label>
-<label><input type="radio" name="q11" value="d"> d) won</label>
+<div class="pregunta"><p class="texto">11. Complete: first, second, ___, fourth</p><div class="opciones">
+<label><input type="radio" name="q11" value="a"> a) three</label>
+<label><input type="radio" name="q11" value="b"> b) third</label>
+<label><input type="radio" name="q11" value="c"> c) threeth</label>
+<label><input type="radio" name="q11" value="d"> d) thirder</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">12. 3rd in English is:</p><div class="opciones">
-<label><input type="radio" name="q12" value="a"> a) three</label>
-<label><input type="radio" name="q12" value="b"> b) third</label>
-<label><input type="radio" name="q12" value="c"> c) tree</label>
-<label><input type="radio" name="q12" value="d"> d) thirty</label>
+<div class="pregunta"><p class="texto">12. "My birthday is in the ___ month." (9)</p><div class="opciones">
+<label><input type="radio" name="q12" value="a"> a) ninth</label>
+<label><input type="radio" name="q12" value="b"> b) nineth</label>
+<label><input type="radio" name="q12" value="c"> c) nine</label>
+<label><input type="radio" name="q12" value="d"> d) nines</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">13. 5th in English is:</p><div class="opciones">
-<label><input type="radio" name="q13" value="a"> a) five</label>
-<label><input type="radio" name="q13" value="b"> b) fifth</label>
-<label><input type="radio" name="q13" value="c"> c) fived</label>
-<label><input type="radio" name="q13" value="d"> d) fives</label>
+<h2>III. VERB TO BE</h2>
+
+<div class="pregunta"><p class="texto">13. I ___ a student.</p><div class="opciones">
+<label><input type="radio" name="q13" value="a"> a) am</label>
+<label><input type="radio" name="q13" value="b"> b) is</label>
+<label><input type="radio" name="q13" value="c"> c) are</label>
+<label><input type="radio" name="q13" value="d"> d) be</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">14. 8th in English is:</p><div class="opciones">
-<label><input type="radio" name="q14" value="a"> a) eight</label>
-<label><input type="radio" name="q14" value="b"> b) eighth</label>
-<label><input type="radio" name="q14" value="c"> c) eightieth</label>
-<label><input type="radio" name="q14" value="d"> d) eighty</label>
+<div class="pregunta"><p class="texto">14. She ___ from Mexico.</p><div class="opciones">
+<label><input type="radio" name="q14" value="a"> a) am</label>
+<label><input type="radio" name="q14" value="b"> b) is</label>
+<label><input type="radio" name="q14" value="c"> c) are</label>
+<label><input type="radio" name="q14" value="d"> d) be</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">15. 10th in English is:</p><div class="opciones">
-<label><input type="radio" name="q15" value="a"> a) tenth</label>
-<label><input type="radio" name="q15" value="b"> b) ten</label>
-<label><input type="radio" name="q15" value="c"> c) tens</label>
-<label><input type="radio" name="q15" value="d"> d) tenty</label>
+<div class="pregunta"><p class="texto">15. We ___ in English class.</p><div class="opciones">
+<label><input type="radio" name="q15" value="a"> a) am</label>
+<label><input type="radio" name="q15" value="b"> b) is</label>
+<label><input type="radio" name="q15" value="c"> c) are</label>
+<label><input type="radio" name="q15" value="d"> d) be</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">16. Complete: first, second, ___, fourth</p><div class="opciones">
-<label><input type="radio" name="q16" value="a"> a) three</label>
-<label><input type="radio" name="q16" value="b"> b) third</label>
-<label><input type="radio" name="q16" value="c"> c) threeth</label>
-<label><input type="radio" name="q16" value="d"> d) thirder</label>
+<div class="pregunta"><p class="texto">16. They ___ my friends.</p><div class="opciones">
+<label><input type="radio" name="q16" value="a"> a) am</label>
+<label><input type="radio" name="q16" value="b"> b) is</label>
+<label><input type="radio" name="q16" value="c"> c) are</label>
+<label><input type="radio" name="q16" value="d"> d) be</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">17. Complete: sixth, ___, eighth</p><div class="opciones">
-<label><input type="radio" name="q17" value="a"> a) seven</label>
-<label><input type="radio" name="q17" value="b"> b) seventh</label>
-<label><input type="radio" name="q17" value="c"> c) sevens</label>
-<label><input type="radio" name="q17" value="d"> d) sevenths</label>
+<div class="pregunta"><p class="texto">17. Negative of "You are late."</p><div class="opciones">
+<label><input type="radio" name="q17" value="a"> a) You isn't late.</label>
+<label><input type="radio" name="q17" value="b"> b) You aren't late.</label>
+<label><input type="radio" name="q17" value="c"> c) You amn't late.</label>
+<label><input type="radio" name="q17" value="d"> d) You not late.</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">18. "My birthday is in the ___ month." (9)</p><div class="opciones">
-<label><input type="radio" name="q18" value="a"> a) ninth</label>
-<label><input type="radio" name="q18" value="b"> b) nineth</label>
-<label><input type="radio" name="q18" value="c"> c) nine</label>
-<label><input type="radio" name="q18" value="d"> d) nines</label>
+<div class="pregunta"><p class="texto">18. Question form: "___ you students?"</p><div class="opciones">
+<label><input type="radio" name="q18" value="a"> a) Is</label>
+<label><input type="radio" name="q18" value="b"> b) Am</label>
+<label><input type="radio" name="q18" value="c"> c) Are</label>
+<label><input type="radio" name="q18" value="d"> d) Be</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">19. "Today is my ___ day here." (2)</p><div class="opciones">
-<label><input type="radio" name="q19" value="a"> a) two</label>
-<label><input type="radio" name="q19" value="b"> b) second</label>
-<label><input type="radio" name="q19" value="c"> c) twoth</label>
-<label><input type="radio" name="q19" value="d"> d) seconds</label>
+<h2>IV. PERSONAL INFORMATION</h2>
+
+<div class="pregunta"><p class="texto">19. "What's your name?"</p><div class="opciones">
+<label><input type="radio" name="q19" value="a"> a) My name is Carlos.</label>
+<label><input type="radio" name="q19" value="b"> b) I'm from Puebla.</label>
+<label><input type="radio" name="q19" value="c"> c) I'm fourteen.</label>
+<label><input type="radio" name="q19" value="d"> d) It's 555-1234.</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">20. "She finished in ___ place." (1)</p><div class="opciones">
-<label><input type="radio" name="q20" value="a"> a) one</label>
-<label><input type="radio" name="q20" value="b"> b) once</label>
-<label><input type="radio" name="q20" value="c"> c) first</label>
-<label><input type="radio" name="q20" value="d"> d) firsth</label>
+<div class="pregunta"><p class="texto">20. "How old are you?"</p><div class="opciones">
+<label><input type="radio" name="q20" value="a"> a) My name is Ana.</label>
+<label><input type="radio" name="q20" value="b"> b) I'm thirteen years old.</label>
+<label><input type="radio" name="q20" value="c"> c) I'm from Mexico.</label>
+<label><input type="radio" name="q20" value="d"> d) My last name is López.</label>
 </div></div>
 
-<h2>III. VERB TO BE (10 pts)</h2>
-
-<div class="pregunta"><p class="texto">21. I ___ a student.</p><div class="opciones">
-<label><input type="radio" name="q21" value="a"> a) am</label>
-<label><input type="radio" name="q21" value="b"> b) is</label>
-<label><input type="radio" name="q21" value="c"> c) are</label>
-<label><input type="radio" name="q21" value="d"> d) be</label>
+<div class="pregunta"><p class="texto">21. "Where are you from?"</p><div class="opciones">
+<label><input type="radio" name="q21" value="a"> a) I'm from Puebla.</label>
+<label><input type="radio" name="q21" value="b"> b) I'm fine.</label>
+<label><input type="radio" name="q21" value="c"> c) My name is Luis.</label>
+<label><input type="radio" name="q21" value="d"> d) I'm ten.</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">22. She ___ from Mexico.</p><div class="opciones">
-<label><input type="radio" name="q22" value="a"> a) am</label>
-<label><input type="radio" name="q22" value="b"> b) is</label>
-<label><input type="radio" name="q22" value="c"> c) are</label>
-<label><input type="radio" name="q22" value="d"> d) be</label>
+<div class="pregunta"><p class="texto">22. "What's your phone number?"</p><div class="opciones">
+<label><input type="radio" name="q22" value="a"> a) My name is Juan.</label>
+<label><input type="radio" name="q22" value="b"> b) It's 222-555-1234.</label>
+<label><input type="radio" name="q22" value="c"> c) I'm from Oaxaca.</label>
+<label><input type="radio" name="q22" value="d"> d) I'm eleven.</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">23. We ___ in English class.</p><div class="opciones">
-<label><input type="radio" name="q23" value="a"> a) am</label>
-<label><input type="radio" name="q23" value="b"> b) is</label>
-<label><input type="radio" name="q23" value="c"> c) are</label>
-<label><input type="radio" name="q23" value="d"> d) be</label>
+<div class="pregunta"><p class="texto">23. "What's your last name?"</p><div class="opciones">
+<label><input type="radio" name="q23" value="a"> a) My last name is Hernández.</label>
+<label><input type="radio" name="q23" value="b"> b) My name is Pedro.</label>
+<label><input type="radio" name="q23" value="c"> c) I'm twelve.</label>
+<label><input type="radio" name="q23" value="d"> d) I'm from Puebla.</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">24. They ___ my friends.</p><div class="opciones">
-<label><input type="radio" name="q24" value="a"> a) am</label>
-<label><input type="radio" name="q24" value="b"> b) is</label>
-<label><input type="radio" name="q24" value="c"> c) are</label>
-<label><input type="radio" name="q24" value="d"> d) be</label>
+<div class="pregunta"><p class="texto">24. To ask someone's name you say:</p><div class="opciones">
+<label><input type="radio" name="q24" value="a"> a) How are you?</label>
+<label><input type="radio" name="q24" value="b"> b) What's your name?</label>
+<label><input type="radio" name="q24" value="c"> c) Where are you from?</label>
+<label><input type="radio" name="q24" value="d"> d) How old are you?</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">25. He ___ twelve years old.</p><div class="opciones">
-<label><input type="radio" name="q25" value="a"> a) am</label>
-<label><input type="radio" name="q25" value="b"> b) is</label>
-<label><input type="radio" name="q25" value="c"> c) are</label>
-<label><input type="radio" name="q25" value="d"> d) be</label>
+<h2>V. NOUNS: SINGULAR AND PLURAL</h2>
+
+<div class="pregunta"><p class="texto">25. Plural of "book":</p><div class="opciones">
+<label><input type="radio" name="q25" value="a"> a) bookes</label>
+<label><input type="radio" name="q25" value="b"> b) books</label>
+<label><input type="radio" name="q25" value="c"> c) bookies</label>
+<label><input type="radio" name="q25" value="d"> d) bookz</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">26. Negative of "You are late."</p><div class="opciones">
-<label><input type="radio" name="q26" value="a"> a) You isn't late.</label>
-<label><input type="radio" name="q26" value="b"> b) You aren't late.</label>
-<label><input type="radio" name="q26" value="c"> c) You amn't late.</label>
-<label><input type="radio" name="q26" value="d"> d) You not late.</label>
+<div class="pregunta"><p class="texto">26. Plural of "box":</p><div class="opciones">
+<label><input type="radio" name="q26" value="a"> a) boxs</label>
+<label><input type="radio" name="q26" value="b"> b) boxes</label>
+<label><input type="radio" name="q26" value="c"> c) boxies</label>
+<label><input type="radio" name="q26" value="d"> d) boxen</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">27. Negative of "It is Monday."</p><div class="opciones">
-<label><input type="radio" name="q27" value="a"> a) It isn't Monday.</label>
-<label><input type="radio" name="q27" value="b"> b) It aren't Monday.</label>
-<label><input type="radio" name="q27" value="c"> c) It not is Monday.</label>
-<label><input type="radio" name="q27" value="d"> d) It doesn't Monday.</label>
+<div class="pregunta"><p class="texto">27. Plural of "city":</p><div class="opciones">
+<label><input type="radio" name="q27" value="a"> a) citys</label>
+<label><input type="radio" name="q27" value="b"> b) cityes</label>
+<label><input type="radio" name="q27" value="c"> c) cities</label>
+<label><input type="radio" name="q27" value="d"> d) citie</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">28. Question form: "___ he your brother?"</p><div class="opciones">
-<label><input type="radio" name="q28" value="a"> a) Is</label>
-<label><input type="radio" name="q28" value="b"> b) Are</label>
-<label><input type="radio" name="q28" value="c"> c) Am</label>
-<label><input type="radio" name="q28" value="d"> d) Be</label>
+<div class="pregunta"><p class="texto">28. Plural of "child":</p><div class="opciones">
+<label><input type="radio" name="q28" value="a"> a) childs</label>
+<label><input type="radio" name="q28" value="b"> b) childes</label>
+<label><input type="radio" name="q28" value="c"> c) children</label>
+<label><input type="radio" name="q28" value="d"> d) childrens</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">29. Question form: "___ you students?"</p><div class="opciones">
-<label><input type="radio" name="q29" value="a"> a) Is</label>
-<label><input type="radio" name="q29" value="b"> b) Am</label>
-<label><input type="radio" name="q29" value="c"> c) Are</label>
-<label><input type="radio" name="q29" value="d"> d) Be</label>
+<div class="pregunta"><p class="texto">29. Singular of "women":</p><div class="opciones">
+<label><input type="radio" name="q29" value="a"> a) woman</label>
+<label><input type="radio" name="q29" value="b"> b) womans</label>
+<label><input type="radio" name="q29" value="c"> c) womane</label>
+<label><input type="radio" name="q29" value="d"> d) womens</label>
 </div></div>
 
-<div class="pregunta"><p class="texto">30. Affirmative of "We aren't ready."</p><div class="opciones">
-<label><input type="radio" name="q30" value="a"> a) We isn't ready.</label>
-<label><input type="radio" name="q30" value="b"> b) We are ready.</label>
-<label><input type="radio" name="q30" value="c"> c) We am ready.</label>
-<label><input type="radio" name="q30" value="d"> d) We not ready.</label>
-</div></div>
-
-<h2>IV. PERSONAL INFORMATION (10 pts)</h2>
-
-<div class="pregunta"><p class="texto">31. "What's your name?"</p><div class="opciones">
-<label><input type="radio" name="q31" value="a"> a) My name is Carlos.</label>
-<label><input type="radio" name="q31" value="b"> b) I'm from Puebla.</label>
-<label><input type="radio" name="q31" value="c"> c) I'm fourteen.</label>
-<label><input type="radio" name="q31" value="d"> d) It's 555-1234.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">32. "How old are you?"</p><div class="opciones">
-<label><input type="radio" name="q32" value="a"> a) My name is Ana.</label>
-<label><input type="radio" name="q32" value="b"> b) I'm thirteen years old.</label>
-<label><input type="radio" name="q32" value="c"> c) I'm from Mexico.</label>
-<label><input type="radio" name="q32" value="d"> d) My last name is López.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">33. "Where are you from?"</p><div class="opciones">
-<label><input type="radio" name="q33" value="a"> a) I'm from Puebla.</label>
-<label><input type="radio" name="q33" value="b"> b) I'm fine.</label>
-<label><input type="radio" name="q33" value="c"> c) My name is Luis.</label>
-<label><input type="radio" name="q33" value="d"> d) I'm ten.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">34. "What's your phone number?"</p><div class="opciones">
-<label><input type="radio" name="q34" value="a"> a) My name is Juan.</label>
-<label><input type="radio" name="q34" value="b"> b) It's 222-555-1234.</label>
-<label><input type="radio" name="q34" value="c"> c) I'm from Oaxaca.</label>
-<label><input type="radio" name="q34" value="d"> d) I'm eleven.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">35. "What's your last name?"</p><div class="opciones">
-<label><input type="radio" name="q35" value="a"> a) My last name is Hernández.</label>
-<label><input type="radio" name="q35" value="b"> b) My name is Pedro.</label>
-<label><input type="radio" name="q35" value="c"> c) I'm twelve.</label>
-<label><input type="radio" name="q35" value="d"> d) I'm from Puebla.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">36. "What's your e-mail address?"</p><div class="opciones">
-<label><input type="radio" name="q36" value="a"> a) It's ana@mail.com</label>
-<label><input type="radio" name="q36" value="b"> b) I'm Ana.</label>
-<label><input type="radio" name="q36" value="c"> c) I'm 12.</label>
-<label><input type="radio" name="q36" value="d"> d) It's Monday.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">37. "What's your address?"</p><div class="opciones">
-<label><input type="radio" name="q37" value="a"> a) It's on 5th Street.</label>
-<label><input type="radio" name="q37" value="b"> b) I'm fine.</label>
-<label><input type="radio" name="q37" value="c"> c) It's Tuesday.</label>
-<label><input type="radio" name="q37" value="d"> d) I'm Mexican.</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">38. To ask someone's name you say:</p><div class="opciones">
-<label><input type="radio" name="q38" value="a"> a) How are you?</label>
-<label><input type="radio" name="q38" value="b"> b) What's your name?</label>
-<label><input type="radio" name="q38" value="c"> c) Where are you from?</label>
-<label><input type="radio" name="q38" value="d"> d) How old are you?</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">39. To ask someone's age you say:</p><div class="opciones">
-<label><input type="radio" name="q39" value="a"> a) What's your name?</label>
-<label><input type="radio" name="q39" value="b"> b) How old are you?</label>
-<label><input type="radio" name="q39" value="c"> c) Where do you live?</label>
-<label><input type="radio" name="q39" value="d"> d) What's your number?</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">40. To ask where someone is from you say:</p><div class="opciones">
-<label><input type="radio" name="q40" value="a"> a) Where are you from?</label>
-<label><input type="radio" name="q40" value="b"> b) What's your name?</label>
-<label><input type="radio" name="q40" value="c"> c) How old are you?</label>
-<label><input type="radio" name="q40" value="d"> d) What's your address?</label>
-</div></div>
-
-<h2>V. NOUNS: SINGULAR AND PLURAL (10 pts)</h2>
-
-<div class="pregunta"><p class="texto">41. Plural of "book":</p><div class="opciones">
-<label><input type="radio" name="q41" value="a"> a) bookes</label>
-<label><input type="radio" name="q41" value="b"> b) books</label>
-<label><input type="radio" name="q41" value="c"> c) bookies</label>
-<label><input type="radio" name="q41" value="d"> d) bookz</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">42. Plural of "box":</p><div class="opciones">
-<label><input type="radio" name="q42" value="a"> a) boxs</label>
-<label><input type="radio" name="q42" value="b"> b) boxes</label>
-<label><input type="radio" name="q42" value="c"> c) boxies</label>
-<label><input type="radio" name="q42" value="d"> d) boxen</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">43. Plural of "city":</p><div class="opciones">
-<label><input type="radio" name="q43" value="a"> a) citys</label>
-<label><input type="radio" name="q43" value="b"> b) cityes</label>
-<label><input type="radio" name="q43" value="c"> c) cities</label>
-<label><input type="radio" name="q43" value="d"> d) citie</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">44. Plural of "child":</p><div class="opciones">
-<label><input type="radio" name="q44" value="a"> a) childs</label>
-<label><input type="radio" name="q44" value="b"> b) childes</label>
-<label><input type="radio" name="q44" value="c"> c) children</label>
-<label><input type="radio" name="q44" value="d"> d) childrens</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">45. Plural of "pencil":</p><div class="opciones">
-<label><input type="radio" name="q45" value="a"> a) pencils</label>
-<label><input type="radio" name="q45" value="b"> b) pencles</label>
-<label><input type="radio" name="q45" value="c"> c) pencilies</label>
-<label><input type="radio" name="q45" value="d"> d) pencilen</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">46. Singular of "women":</p><div class="opciones">
-<label><input type="radio" name="q46" value="a"> a) woman</label>
-<label><input type="radio" name="q46" value="b"> b) womans</label>
-<label><input type="radio" name="q46" value="c"> c) womane</label>
-<label><input type="radio" name="q46" value="d"> d) womens</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">47. Singular of "mice":</p><div class="opciones">
-<label><input type="radio" name="q47" value="a"> a) mouse</label>
-<label><input type="radio" name="q47" value="b"> b) mices</label>
-<label><input type="radio" name="q47" value="c"> c) mouses</label>
-<label><input type="radio" name="q47" value="d"> d) micee</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">48. Singular of "buses":</p><div class="opciones">
-<label><input type="radio" name="q48" value="a"> a) bus</label>
-<label><input type="radio" name="q48" value="b"> b) buse</label>
-<label><input type="radio" name="q48" value="c"> c) buss</label>
-<label><input type="radio" name="q48" value="d"> d) busi</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">49. Singular of "families":</p><div class="opciones">
-<label><input type="radio" name="q49" value="a"> a) family</label>
-<label><input type="radio" name="q49" value="b"> b) familys</label>
-<label><input type="radio" name="q49" value="c"> c) familie</label>
-<label><input type="radio" name="q49" value="d"> d) familier</label>
-</div></div>
-
-<div class="pregunta"><p class="texto">50. Singular of "desks":</p><div class="opciones">
-<label><input type="radio" name="q50" value="a"> a) desk</label>
-<label><input type="radio" name="q50" value="b"> b) deske</label>
-<label><input type="radio" name="q50" value="c"> c) deski</label>
-<label><input type="radio" name="q50" value="d"> d) deskes</label>
+<div class="pregunta"><p class="texto">30. Singular of "mice":</p><div class="opciones">
+<label><input type="radio" name="q30" value="a"> a) mouse</label>
+<label><input type="radio" name="q30" value="b"> b) mices</label>
+<label><input type="radio" name="q30" value="c"> c) mouses</label>
+<label><input type="radio" name="q30" value="d"> d) micee</label>
 </div></div>
 
 <button type="submit" id="enviar">Enviar respuestas</button>
