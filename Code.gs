@@ -13,15 +13,19 @@ function doPost(e) {
   var data = e.parameter;
 
   if (sheet.getLastRow() === 0) {
-    var headers = ["Fecha y hora de envío", "Apellido Paterno", "Apellido Materno", "Nombre(s)"];
+    var headers = ["Fecha de envío", "Hora de envío", "Apellido Paterno", "Apellido Materno", "Nombre(s)"];
     for (var i = 1; i <= TOTAL_PREGUNTAS; i++) headers.push("P" + i);
     headers.push("Aciertos");
     headers.push("Calificación (0-10)");
     sheet.appendRow(headers);
   }
 
+  var ahora = new Date();
+  var zonaHoraria = Session.getScriptTimeZone();
+
   var row = [
-    new Date(),
+    Utilities.formatDate(ahora, zonaHoraria, "dd/MM/yyyy"),
+    Utilities.formatDate(ahora, zonaHoraria, "HH:mm:ss"),
     data.apellido_paterno || "",
     data.apellido_materno || "",
     data.nombres || ""
