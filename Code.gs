@@ -3,7 +3,7 @@ function doPost(e) {
   var data = e.parameter;
 
   if (sheet.getLastRow() === 0) {
-    var headers = ["Fecha y hora de envío", "Apellido Paterno", "Apellido Materno", "Nombre(s)", "Grupo", "Fecha del examen"];
+    var headers = ["Fecha y hora de envío", "Apellido Paterno", "Apellido Materno", "Nombre(s)"];
     for (var i = 1; i <= 50; i++) headers.push("P" + i);
     sheet.appendRow(headers);
   }
@@ -12,9 +12,7 @@ function doPost(e) {
     new Date(),
     data.apellido_paterno || "",
     data.apellido_materno || "",
-    data.nombres || "",
-    data.grupo || "",
-    data.fecha || ""
+    data.nombres || ""
   ];
   for (var i = 1; i <= 50; i++) {
     row.push(data["q" + i] || "");
