@@ -103,6 +103,9 @@
     margin-bottom: 6px;
     color: var(--ink-soft);
   }
+  .datos label .req {
+    color: #e0608a;
+  }
   .datos input[type=text] {
     width: 100%;
     padding: 10px 14px;
@@ -119,6 +122,10 @@
   .datos input[type=text]:focus {
     border-color: var(--lavender-dark);
   }
+  .datos input.campo-error {
+    border-color: #e0608a;
+    background: #fff3f6;
+  }
 
   .instrucciones {
     background: var(--mint);
@@ -128,6 +135,12 @@
     font-size: 0.9em;
     margin-bottom: 26px;
     color: #3e6e57;
+  }
+  .instrucciones .nota {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.92em;
+    color: #2f5c47;
   }
 
   h2 {
@@ -152,6 +165,10 @@
     padding: 16px 20px;
     margin: 14px 0;
     box-shadow: 0 6px 0 #f0eefa, 0 10px 18px rgba(170, 160, 210, 0.12);
+    transition: box-shadow 0.2s;
+  }
+  .pregunta.sin-responder {
+    box-shadow: 0 0 0 3px #f4a9c7, 0 6px 0 #f0eefa, 0 10px 18px rgba(170, 160, 210, 0.12);
   }
   .pregunta p.texto {
     font-weight: 700;
@@ -192,7 +209,10 @@
   }
 
   #enviar {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin: 36px auto 12px;
     padding: 16px 48px;
     font-family: 'Baloo 2', cursive;
@@ -219,10 +239,23 @@
     cursor: not-allowed;
   }
 
+  .spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255,255,255,0.5);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: girar 0.7s linear infinite;
+  }
+  @keyframes girar {
+    to { transform: rotate(360deg); }
+  }
+
   #mensaje {
     text-align: center;
     font-weight: 700;
     margin-top: 6px;
+    white-space: pre-line;
   }
 
   @media print {
@@ -253,15 +286,15 @@
 <div class="datos">
   <div class="datos-grid">
     <div>
-      <label>Apellido Paterno</label>
+      <label>Apellido Paterno <span class="req">*</span></label>
       <input type="text" name="apellido_paterno">
     </div>
     <div>
-      <label>Apellido Materno</label>
+      <label>Apellido Materno <span class="req">*</span></label>
       <input type="text" name="apellido_materno">
     </div>
     <div>
-      <label>Nombre(s)</label>
+      <label>Nombre(s) <span class="req">*</span></label>
       <input type="text" name="nombres">
     </div>
   </div>
@@ -269,50 +302,51 @@
 
 <div class="instrucciones">
   Lee cada pregunta y selecciona la opción correcta (a, b, c o d). 30 preguntas, calificación final en escala 0-10.
+  <span class="nota">* Debes escribir tu Apellido Paterno, Apellido Materno y Nombre(s), y contestar las 30 preguntas. El examen no se puede enviar si falta algún dato.</span>
 </div>
 
 <h2>I. COMMANDS</h2>
 
 <div class="pregunta"><p class="texto">1. "Abre la ventana."</p><div class="opciones">
-<label><input type="radio" name="q1" value="a"> a) Close the window</label>
-<label><input type="radio" name="q1" value="b"> b) Open the window</label>
-<label><input type="radio" name="q1" value="c"> c) Open the door</label>
-<label><input type="radio" name="q1" value="d"> d) Sit down</label>
+<label><input type="radio" name="q1" value="a"> a) Sit down</label>
+<label><input type="radio" name="q1" value="b"> b) Close the window</label>
+<label><input type="radio" name="q1" value="c"> c) Open the window</label>
+<label><input type="radio" name="q1" value="d"> d) Open the door</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">2. "Guarda silencio."</p><div class="opciones">
-<label><input type="radio" name="q2" value="a"> a) Be quiet</label>
-<label><input type="radio" name="q2" value="b"> b) Stand up</label>
-<label><input type="radio" name="q2" value="c"> c) Listen</label>
-<label><input type="radio" name="q2" value="d"> d) Walk</label>
+<label><input type="radio" name="q2" value="a"> a) Stand up</label>
+<label><input type="radio" name="q2" value="b"> b) Listen</label>
+<label><input type="radio" name="q2" value="c"> c) Walk</label>
+<label><input type="radio" name="q2" value="d"> d) Be quiet</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">3. "Levanta la mano."</p><div class="opciones">
-<label><input type="radio" name="q3" value="a"> a) Raise your hand</label>
-<label><input type="radio" name="q3" value="b"> b) Open your book</label>
-<label><input type="radio" name="q3" value="c"> c) Close your notebook</label>
-<label><input type="radio" name="q3" value="d"> d) Sit down</label>
+<label><input type="radio" name="q3" value="a"> a) Sit down</label>
+<label><input type="radio" name="q3" value="b"> b) Raise your hand</label>
+<label><input type="radio" name="q3" value="c"> c) Open your book</label>
+<label><input type="radio" name="q3" value="d"> d) Close your notebook</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">4. "Ponte de pie."</p><div class="opciones">
-<label><input type="radio" name="q4" value="a"> a) Sit down</label>
-<label><input type="radio" name="q4" value="b"> b) Stand up</label>
-<label><input type="radio" name="q4" value="c"> c) Walk</label>
-<label><input type="radio" name="q4" value="d"> d) Run</label>
+<label><input type="radio" name="q4" value="a"> a) Stand up</label>
+<label><input type="radio" name="q4" value="b"> b) Walk</label>
+<label><input type="radio" name="q4" value="c"> c) Run</label>
+<label><input type="radio" name="q4" value="d"> d) Sit down</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">5. "Siéntate."</p><div class="opciones">
-<label><input type="radio" name="q5" value="a"> a) Stand up</label>
-<label><input type="radio" name="q5" value="b"> b) Sit down</label>
-<label><input type="radio" name="q5" value="c"> c) Jump</label>
-<label><input type="radio" name="q5" value="d"> d) Open the door</label>
+<label><input type="radio" name="q5" value="a"> a) Open the door</label>
+<label><input type="radio" name="q5" value="b"> b) Stand up</label>
+<label><input type="radio" name="q5" value="c"> c) Sit down</label>
+<label><input type="radio" name="q5" value="d"> d) Jump</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">6. "Escucha con atención."</p><div class="opciones">
-<label><input type="radio" name="q6" value="a"> a) Listen carefully</label>
-<label><input type="radio" name="q6" value="b"> b) Speak loudly</label>
-<label><input type="radio" name="q6" value="c"> c) Write slowly</label>
-<label><input type="radio" name="q6" value="d"> d) Read quickly</label>
+<label><input type="radio" name="q6" value="a"> a) Speak loudly</label>
+<label><input type="radio" name="q6" value="b"> b) Write slowly</label>
+<label><input type="radio" name="q6" value="c"> c) Read quickly</label>
+<label><input type="radio" name="q6" value="d"> d) Listen carefully</label>
 </div></div>
 
 <h2>II. ORDINAL NUMBERS</h2>
@@ -325,91 +359,91 @@
 </div></div>
 
 <div class="pregunta"><p class="texto">8. 3rd in English is:</p><div class="opciones">
-<label><input type="radio" name="q8" value="a"> a) three</label>
-<label><input type="radio" name="q8" value="b"> b) third</label>
-<label><input type="radio" name="q8" value="c"> c) tree</label>
-<label><input type="radio" name="q8" value="d"> d) thirty</label>
+<label><input type="radio" name="q8" value="a"> a) third</label>
+<label><input type="radio" name="q8" value="b"> b) tree</label>
+<label><input type="radio" name="q8" value="c"> c) thirty</label>
+<label><input type="radio" name="q8" value="d"> d) three</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">9. 5th in English is:</p><div class="opciones">
-<label><input type="radio" name="q9" value="a"> a) five</label>
-<label><input type="radio" name="q9" value="b"> b) fifth</label>
-<label><input type="radio" name="q9" value="c"> c) fived</label>
-<label><input type="radio" name="q9" value="d"> d) fives</label>
+<label><input type="radio" name="q9" value="a"> a) fived</label>
+<label><input type="radio" name="q9" value="b"> b) fives</label>
+<label><input type="radio" name="q9" value="c"> c) five</label>
+<label><input type="radio" name="q9" value="d"> d) fifth</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">10. 8th in English is:</p><div class="opciones">
-<label><input type="radio" name="q10" value="a"> a) eight</label>
-<label><input type="radio" name="q10" value="b"> b) eighth</label>
-<label><input type="radio" name="q10" value="c"> c) eightieth</label>
-<label><input type="radio" name="q10" value="d"> d) eighty</label>
+<label><input type="radio" name="q10" value="a"> a) eighty</label>
+<label><input type="radio" name="q10" value="b"> b) eight</label>
+<label><input type="radio" name="q10" value="c"> c) eighth</label>
+<label><input type="radio" name="q10" value="d"> d) eightieth</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">11. Complete: first, second, ___, fourth</p><div class="opciones">
-<label><input type="radio" name="q11" value="a"> a) three</label>
-<label><input type="radio" name="q11" value="b"> b) third</label>
-<label><input type="radio" name="q11" value="c"> c) threeth</label>
-<label><input type="radio" name="q11" value="d"> d) thirder</label>
+<label><input type="radio" name="q11" value="a"> a) third</label>
+<label><input type="radio" name="q11" value="b"> b) threeth</label>
+<label><input type="radio" name="q11" value="c"> c) thirder</label>
+<label><input type="radio" name="q11" value="d"> d) three</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">12. "My birthday is in the ___ month." (9)</p><div class="opciones">
-<label><input type="radio" name="q12" value="a"> a) ninth</label>
-<label><input type="radio" name="q12" value="b"> b) nineth</label>
-<label><input type="radio" name="q12" value="c"> c) nine</label>
-<label><input type="radio" name="q12" value="d"> d) nines</label>
+<label><input type="radio" name="q12" value="a"> a) nines</label>
+<label><input type="radio" name="q12" value="b"> b) ninth</label>
+<label><input type="radio" name="q12" value="c"> c) nineth</label>
+<label><input type="radio" name="q12" value="d"> d) nine</label>
 </div></div>
 
 <h2>III. VERB TO BE</h2>
 
 <div class="pregunta"><p class="texto">13. I ___ a student.</p><div class="opciones">
-<label><input type="radio" name="q13" value="a"> a) am</label>
-<label><input type="radio" name="q13" value="b"> b) is</label>
-<label><input type="radio" name="q13" value="c"> c) are</label>
-<label><input type="radio" name="q13" value="d"> d) be</label>
+<label><input type="radio" name="q13" value="a"> a) is</label>
+<label><input type="radio" name="q13" value="b"> b) are</label>
+<label><input type="radio" name="q13" value="c"> c) be</label>
+<label><input type="radio" name="q13" value="d"> d) am</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">14. She ___ from Mexico.</p><div class="opciones">
-<label><input type="radio" name="q14" value="a"> a) am</label>
-<label><input type="radio" name="q14" value="b"> b) is</label>
-<label><input type="radio" name="q14" value="c"> c) are</label>
-<label><input type="radio" name="q14" value="d"> d) be</label>
+<label><input type="radio" name="q14" value="a"> a) be</label>
+<label><input type="radio" name="q14" value="b"> b) am</label>
+<label><input type="radio" name="q14" value="c"> c) is</label>
+<label><input type="radio" name="q14" value="d"> d) are</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">15. We ___ in English class.</p><div class="opciones">
-<label><input type="radio" name="q15" value="a"> a) am</label>
-<label><input type="radio" name="q15" value="b"> b) is</label>
-<label><input type="radio" name="q15" value="c"> c) are</label>
-<label><input type="radio" name="q15" value="d"> d) be</label>
+<label><input type="radio" name="q15" value="a"> a) are</label>
+<label><input type="radio" name="q15" value="b"> b) be</label>
+<label><input type="radio" name="q15" value="c"> c) am</label>
+<label><input type="radio" name="q15" value="d"> d) is</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">16. They ___ my friends.</p><div class="opciones">
-<label><input type="radio" name="q16" value="a"> a) am</label>
-<label><input type="radio" name="q16" value="b"> b) is</label>
-<label><input type="radio" name="q16" value="c"> c) are</label>
-<label><input type="radio" name="q16" value="d"> d) be</label>
+<label><input type="radio" name="q16" value="a"> a) is</label>
+<label><input type="radio" name="q16" value="b"> b) are</label>
+<label><input type="radio" name="q16" value="c"> c) be</label>
+<label><input type="radio" name="q16" value="d"> d) am</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">17. Negative of "You are late."</p><div class="opciones">
-<label><input type="radio" name="q17" value="a"> a) You isn't late.</label>
-<label><input type="radio" name="q17" value="b"> b) You aren't late.</label>
-<label><input type="radio" name="q17" value="c"> c) You amn't late.</label>
-<label><input type="radio" name="q17" value="d"> d) You not late.</label>
+<label><input type="radio" name="q17" value="a"> a) You amn't late.</label>
+<label><input type="radio" name="q17" value="b"> b) You not late.</label>
+<label><input type="radio" name="q17" value="c"> c) You isn't late.</label>
+<label><input type="radio" name="q17" value="d"> d) You aren't late.</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">18. Question form: "___ you students?"</p><div class="opciones">
-<label><input type="radio" name="q18" value="a"> a) Is</label>
-<label><input type="radio" name="q18" value="b"> b) Am</label>
-<label><input type="radio" name="q18" value="c"> c) Are</label>
-<label><input type="radio" name="q18" value="d"> d) Be</label>
+<label><input type="radio" name="q18" value="a"> a) Are</label>
+<label><input type="radio" name="q18" value="b"> b) Be</label>
+<label><input type="radio" name="q18" value="c"> c) Is</label>
+<label><input type="radio" name="q18" value="d"> d) Am</label>
 </div></div>
 
 <h2>IV. PERSONAL INFORMATION</h2>
 
 <div class="pregunta"><p class="texto">19. "What's your name?"</p><div class="opciones">
-<label><input type="radio" name="q19" value="a"> a) My name is Carlos.</label>
-<label><input type="radio" name="q19" value="b"> b) I'm from Puebla.</label>
-<label><input type="radio" name="q19" value="c"> c) I'm fourteen.</label>
-<label><input type="radio" name="q19" value="d"> d) It's 555-1234.</label>
+<label><input type="radio" name="q19" value="a"> a) I'm fourteen.</label>
+<label><input type="radio" name="q19" value="b"> b) It's 555-1234.</label>
+<label><input type="radio" name="q19" value="c"> c) My name is Carlos.</label>
+<label><input type="radio" name="q19" value="d"> d) I'm from Puebla.</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">20. "How old are you?"</p><div class="opciones">
@@ -420,54 +454,54 @@
 </div></div>
 
 <div class="pregunta"><p class="texto">21. "Where are you from?"</p><div class="opciones">
-<label><input type="radio" name="q21" value="a"> a) I'm from Puebla.</label>
-<label><input type="radio" name="q21" value="b"> b) I'm fine.</label>
-<label><input type="radio" name="q21" value="c"> c) My name is Luis.</label>
-<label><input type="radio" name="q21" value="d"> d) I'm ten.</label>
+<label><input type="radio" name="q21" value="a"> a) I'm fine.</label>
+<label><input type="radio" name="q21" value="b"> b) My name is Luis.</label>
+<label><input type="radio" name="q21" value="c"> c) I'm ten.</label>
+<label><input type="radio" name="q21" value="d"> d) I'm from Puebla.</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">22. "What's your phone number?"</p><div class="opciones">
-<label><input type="radio" name="q22" value="a"> a) My name is Juan.</label>
-<label><input type="radio" name="q22" value="b"> b) It's 222-555-1234.</label>
-<label><input type="radio" name="q22" value="c"> c) I'm from Oaxaca.</label>
-<label><input type="radio" name="q22" value="d"> d) I'm eleven.</label>
+<label><input type="radio" name="q22" value="a"> a) It's 222-555-1234.</label>
+<label><input type="radio" name="q22" value="b"> b) I'm from Oaxaca.</label>
+<label><input type="radio" name="q22" value="c"> c) I'm eleven.</label>
+<label><input type="radio" name="q22" value="d"> d) My name is Juan.</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">23. "What's your last name?"</p><div class="opciones">
-<label><input type="radio" name="q23" value="a"> a) My last name is Hernández.</label>
-<label><input type="radio" name="q23" value="b"> b) My name is Pedro.</label>
-<label><input type="radio" name="q23" value="c"> c) I'm twelve.</label>
-<label><input type="radio" name="q23" value="d"> d) I'm from Puebla.</label>
+<label><input type="radio" name="q23" value="a"> a) I'm from Puebla.</label>
+<label><input type="radio" name="q23" value="b"> b) My last name is Hernández.</label>
+<label><input type="radio" name="q23" value="c"> c) My name is Pedro.</label>
+<label><input type="radio" name="q23" value="d"> d) I'm twelve.</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">24. To ask someone's name you say:</p><div class="opciones">
-<label><input type="radio" name="q24" value="a"> a) How are you?</label>
-<label><input type="radio" name="q24" value="b"> b) What's your name?</label>
-<label><input type="radio" name="q24" value="c"> c) Where are you from?</label>
-<label><input type="radio" name="q24" value="d"> d) How old are you?</label>
+<label><input type="radio" name="q24" value="a"> a) How old are you?</label>
+<label><input type="radio" name="q24" value="b"> b) How are you?</label>
+<label><input type="radio" name="q24" value="c"> c) What's your name?</label>
+<label><input type="radio" name="q24" value="d"> d) Where are you from?</label>
 </div></div>
 
 <h2>V. NOUNS: SINGULAR AND PLURAL</h2>
 
 <div class="pregunta"><p class="texto">25. Plural of "book":</p><div class="opciones">
-<label><input type="radio" name="q25" value="a"> a) bookes</label>
-<label><input type="radio" name="q25" value="b"> b) books</label>
-<label><input type="radio" name="q25" value="c"> c) bookies</label>
-<label><input type="radio" name="q25" value="d"> d) bookz</label>
+<label><input type="radio" name="q25" value="a"> a) bookies</label>
+<label><input type="radio" name="q25" value="b"> b) bookz</label>
+<label><input type="radio" name="q25" value="c"> c) bookes</label>
+<label><input type="radio" name="q25" value="d"> d) books</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">26. Plural of "box":</p><div class="opciones">
-<label><input type="radio" name="q26" value="a"> a) boxs</label>
-<label><input type="radio" name="q26" value="b"> b) boxes</label>
-<label><input type="radio" name="q26" value="c"> c) boxies</label>
-<label><input type="radio" name="q26" value="d"> d) boxen</label>
+<label><input type="radio" name="q26" value="a"> a) boxes</label>
+<label><input type="radio" name="q26" value="b"> b) boxies</label>
+<label><input type="radio" name="q26" value="c"> c) boxen</label>
+<label><input type="radio" name="q26" value="d"> d) boxs</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">27. Plural of "city":</p><div class="opciones">
-<label><input type="radio" name="q27" value="a"> a) citys</label>
-<label><input type="radio" name="q27" value="b"> b) cityes</label>
-<label><input type="radio" name="q27" value="c"> c) cities</label>
-<label><input type="radio" name="q27" value="d"> d) citie</label>
+<label><input type="radio" name="q27" value="a"> a) cityes</label>
+<label><input type="radio" name="q27" value="b"> b) cities</label>
+<label><input type="radio" name="q27" value="c"> c) citie</label>
+<label><input type="radio" name="q27" value="d"> d) citys</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">28. Plural of "child":</p><div class="opciones">
@@ -478,20 +512,23 @@
 </div></div>
 
 <div class="pregunta"><p class="texto">29. Singular of "women":</p><div class="opciones">
-<label><input type="radio" name="q29" value="a"> a) woman</label>
-<label><input type="radio" name="q29" value="b"> b) womans</label>
-<label><input type="radio" name="q29" value="c"> c) womane</label>
-<label><input type="radio" name="q29" value="d"> d) womens</label>
+<label><input type="radio" name="q29" value="a"> a) womans</label>
+<label><input type="radio" name="q29" value="b"> b) womane</label>
+<label><input type="radio" name="q29" value="c"> c) womens</label>
+<label><input type="radio" name="q29" value="d"> d) woman</label>
 </div></div>
 
 <div class="pregunta"><p class="texto">30. Singular of "mice":</p><div class="opciones">
-<label><input type="radio" name="q30" value="a"> a) mouse</label>
-<label><input type="radio" name="q30" value="b"> b) mices</label>
-<label><input type="radio" name="q30" value="c"> c) mouses</label>
-<label><input type="radio" name="q30" value="d"> d) micee</label>
+<label><input type="radio" name="q30" value="a"> a) micee</label>
+<label><input type="radio" name="q30" value="b"> b) mouse</label>
+<label><input type="radio" name="q30" value="c"> c) mices</label>
+<label><input type="radio" name="q30" value="d"> d) mouses</label>
 </div></div>
 
-<button type="submit" id="enviar">Enviar respuestas</button>
+<button type="submit" id="enviar">
+  <span id="btnText">Enviar respuestas</span>
+  <span id="spinner" class="spinner" hidden></span>
+</button>
 <p id="mensaje"></p>
 
 </form>
@@ -503,46 +540,84 @@
 <script>
   // Reemplaza esta URL con la de tu implementación de Google Apps Script (Deploy > Web app).
   var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTiO6rBDB6VISPOdxv9iTWbddvR3Uu15u_3ia2dK-WNKcrqYHDFmqs25nTwZQyGYmEGQ/exec";
+  var TOTAL_PREGUNTAS = 30;
 
-  document.getElementById('examForm').addEventListener('submit', function (ev) {
+  var form = document.getElementById('examForm');
+  var boton = document.getElementById('enviar');
+  var btnText = document.getElementById('btnText');
+  var spinner = document.getElementById('spinner');
+  var mensaje = document.getElementById('mensaje');
+
+  form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var boton = document.getElementById('enviar');
-    var mensaje = document.getElementById('mensaje');
+    mensaje.textContent = '';
+    mensaje.style.color = '#c0392b';
 
     if (SCRIPT_URL.indexOf('http') !== 0) {
       mensaje.textContent = 'El formulario aún no está conectado a la hoja de respuestas. Avisa a tu profesor.';
-      mensaje.style.color = '#c0392b';
       return;
     }
 
-    var apellidoPaterno = this.querySelector('[name="apellido_paterno"]').value.trim();
-    var apellidoMaterno = this.querySelector('[name="apellido_materno"]').value.trim();
-    var nombres = this.querySelector('[name="nombres"]').value.trim();
+    // Validar nombre
+    var camposNombre = ['apellido_paterno', 'apellido_materno', 'nombres'];
+    var faltanNombre = [];
+    camposNombre.forEach(function (campo) {
+      var input = form.querySelector('[name="' + campo + '"]');
+      var vacio = input.value.trim() === '';
+      input.classList.toggle('campo-error', vacio);
+      if (vacio) faltanNombre.push(campo);
+    });
 
-    if (!apellidoPaterno || !apellidoMaterno || !nombres) {
-      mensaje.textContent = 'Completa Apellido Paterno, Apellido Materno y Nombre(s) antes de enviar.';
-      mensaje.style.color = '#c0392b';
+    // Validar que todas las preguntas estén contestadas
+    var preguntasSinResponder = [];
+    for (var i = 1; i <= TOTAL_PREGUNTAS; i++) {
+      var marcado = form.querySelector('input[name="q' + i + '"]:checked');
+      var contenedor = document.querySelector('.pregunta:has(input[name="q' + i + '"])');
+      if (!marcado) {
+        preguntasSinResponder.push(i);
+        if (contenedor) contenedor.classList.add('sin-responder');
+      } else if (contenedor) {
+        contenedor.classList.remove('sin-responder');
+      }
+    }
+
+    if (faltanNombre.length > 0 || preguntasSinResponder.length > 0) {
+      var partes = [];
+      if (faltanNombre.length > 0) {
+        partes.push('Completa tu Apellido Paterno, Apellido Materno y Nombre(s).');
+      }
+      if (preguntasSinResponder.length > 0) {
+        partes.push('Te faltan por contestar las preguntas: ' + preguntasSinResponder.join(', ') + '.');
+      }
+      mensaje.textContent = partes.join('\n');
+      var primero = preguntasSinResponder.length > 0
+        ? document.querySelector('.pregunta.sin-responder')
+        : form.querySelector('.campo-error');
+      if (primero) primero.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
     boton.disabled = true;
-    boton.textContent = 'Enviando...';
+    btnText.textContent = 'Enviando...';
+    spinner.hidden = false;
 
-    var formData = new FormData(this);
+    var formData = new FormData(form);
 
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
       body: formData
     }).then(function () {
-      mensaje.textContent = '¡Gracias! Tus respuestas fueron enviadas correctamente.';
+      spinner.hidden = true;
       mensaje.style.color = '#27ae60';
-      boton.textContent = 'Enviado';
+      mensaje.textContent = '¡Gracias! Tus respuestas fueron enviadas correctamente.';
+      btnText.textContent = 'Enviado';
     }).catch(function () {
-      mensaje.textContent = 'Hubo un error al enviar. Intenta de nuevo.';
+      spinner.hidden = true;
       mensaje.style.color = '#c0392b';
+      mensaje.textContent = 'Hubo un error al enviar. Intenta de nuevo.';
       boton.disabled = false;
-      boton.textContent = 'Enviar respuestas';
+      btnText.textContent = 'Enviar respuestas';
     });
   });
 </script>

@@ -1,10 +1,10 @@
 // Clave de respuestas correctas (30 preguntas)
 var ANSWER_KEY = {
-  q1: "b", q2: "a", q3: "a", q4: "b", q5: "b", q6: "a",
-  q7: "b", q8: "b", q9: "b", q10: "b", q11: "b", q12: "a",
-  q13: "a", q14: "b", q15: "c", q16: "c", q17: "b", q18: "c",
-  q19: "a", q20: "b", q21: "a", q22: "b", q23: "a", q24: "b",
-  q25: "b", q26: "b", q27: "c", q28: "c", q29: "a", q30: "a"
+  q1: "c", q2: "d", q3: "b", q4: "a", q5: "c", q6: "d",
+  q7: "b", q8: "a", q9: "d", q10: "c", q11: "a", q12: "b",
+  q13: "d", q14: "c", q15: "a", q16: "b", q17: "d", q18: "a",
+  q19: "c", q20: "b", q21: "d", q22: "a", q23: "b", q24: "c",
+  q25: "d", q26: "a", q27: "b", q28: "c", q29: "d", q30: "b"
 };
 var TOTAL_PREGUNTAS = 30;
 
