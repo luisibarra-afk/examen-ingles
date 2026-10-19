@@ -2,127 +2,251 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Examen de Inglés</title>
+<title>Examen de Primer Parcial Inglés I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg-1: #fdf1f8;
+    --bg-2: #eef3ff;
+    --card: #ffffff;
+    --pink: #ffd7e8;
+    --pink-dark: #f4a9c7;
+    --peach: #ffe6c7;
+    --peach-dark: #f0bf85;
+    --mint: #d4f5e3;
+    --mint-dark: #8fdab0;
+    --sky: #d9ecff;
+    --sky-dark: #93c3f2;
+    --lavender: #e7ddfb;
+    --lavender-dark: #c3a8ef;
+    --ink: #4c4458;
+    --ink-soft: #7a7188;
+  }
+
+  * { box-sizing: border-box; }
+
   body {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Quicksand', Arial, sans-serif;
+    background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 14px 60px;
+    color: var(--ink);
+  }
+
+  .wrap {
     max-width: 850px;
-    margin: 30px auto;
-    padding: 0 20px;
-    color: #222;
-    line-height: 1.5;
+    margin: 0 auto;
   }
+
+  .card-top {
+    background: var(--card);
+    border-radius: 28px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 0 #f0e3f2, 0 16px 30px rgba(170, 140, 200, 0.18);
+    text-align: center;
+  }
+
   h1 {
-    text-align: center;
-    margin-bottom: 4px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 2em;
+    margin: 0 0 8px;
+    color: #9b6fc9;
   }
+
   .subtitle {
-    text-align: center;
-    color: #555;
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.95em;
   }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .badge {
+    font-size: 0.78em;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #5a4e68;
+  }
+  .badge:nth-child(1) { background: var(--pink); }
+  .badge:nth-child(2) { background: var(--peach); }
+  .badge:nth-child(3) { background: var(--mint); }
+  .badge:nth-child(4) { background: var(--sky); }
+  .badge:nth-child(5) { background: var(--lavender); }
+
   .datos {
-    border: 1px solid #999;
-    padding: 10px 15px;
-    margin-bottom: 25px;
-    font-family: Arial, sans-serif;
+    background: var(--card);
+    border-radius: 24px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 0 #eef0fb, 0 14px 24px rgba(150, 160, 210, 0.15);
   }
   .datos-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px 20px;
+    gap: 16px 20px;
   }
   .datos label {
     display: block;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 3px;
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    color: var(--ink-soft);
   }
   .datos input[type=text] {
     width: 100%;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    border: none;
-    border-bottom: 1px solid #333;
-    background: transparent;
+    padding: 10px 14px;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    border: 2px solid var(--lavender);
+    border-radius: 14px;
+    background: #faf8ff;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
   }
+  .datos input[type=text]:focus {
+    border-color: var(--lavender-dark);
+  }
+
+  .instrucciones {
+    background: var(--mint);
+    border-radius: 20px;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 26px;
+    color: #3e6e57;
+  }
+
   h2 {
-    background: #2c3e50;
-    color: #fff;
-    padding: 8px 12px;
-    font-size: 1.1em;
-    border-radius: 4px;
-    margin-top: 35px;
+    font-family: 'Baloo 2', cursive;
+    color: #5a4e68;
+    padding: 12px 22px;
+    font-size: 1.15em;
+    border-radius: 20px;
+    margin: 34px 0 16px;
+    display: inline-block;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.06);
   }
+  h2:nth-of-type(1) { background: var(--pink); }
+  h2:nth-of-type(2) { background: var(--peach); }
+  h2:nth-of-type(3) { background: var(--mint); }
+  h2:nth-of-type(4) { background: var(--sky); }
+  h2:nth-of-type(5) { background: var(--lavender); }
+
   .pregunta {
-    margin: 18px 0;
-    padding-bottom: 12px;
-    border-bottom: 1px dotted #ccc;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    box-shadow: 0 6px 0 #f0eefa, 0 10px 18px rgba(170, 160, 210, 0.12);
   }
   .pregunta p.texto {
-    font-weight: bold;
-    margin: 0 0 8px 0;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--ink);
   }
   .opciones {
-    font-family: Arial, sans-serif;
-    font-size: 0.95em;
-    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
   .opciones label {
-    display: block;
-    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 14px;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background 0.15s;
+  }
+  .opciones label:hover {
+    background: #f6f2fc;
   }
   .opciones input {
-    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    accent-color: #b98ee0;
+    cursor: pointer;
   }
-  .instrucciones {
-    background: #f4f6f7;
-    border-left: 4px solid #2c3e50;
-    padding: 10px 15px;
-    font-family: Arial, sans-serif;
-    margin-bottom: 20px;
-  }
+
   footer {
     text-align: center;
     margin-top: 40px;
-    font-style: italic;
-    color: #777;
+    font-weight: 600;
+    color: var(--ink-soft);
   }
+
   #enviar {
     display: block;
-    margin: 30px auto 10px;
-    padding: 12px 30px;
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    background: #2c3e50;
+    margin: 36px auto 12px;
+    padding: 16px 48px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(180deg, #c9a4ef, #a876de);
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 7px 0 #8a5cc0, 0 12px 20px rgba(140, 100, 190, 0.35);
+    transition: transform 0.08s, box-shadow 0.08s;
+  }
+  #enviar:hover {
+    filter: brightness(1.04);
+  }
+  #enviar:active {
+    transform: translateY(5px);
+    box-shadow: 0 2px 0 #8a5cc0, 0 4px 10px rgba(140, 100, 190, 0.3);
   }
   #enviar:disabled {
-    background: #95a5a6;
+    background: #cfc7da;
+    box-shadow: 0 7px 0 #b3abc0;
     cursor: not-allowed;
   }
+
   #mensaje {
     text-align: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 700;
+    margin-top: 6px;
   }
+
   @media print {
-    h2 { background: #fff !important; color: #000 !important; border: 1px solid #000; }
+    body { background: #fff; }
+    .card-top, .datos, .instrucciones, .pregunta { box-shadow: none; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     #enviar { display: none; }
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>Examen de Inglés</h1>
-<p class="subtitle">Commands · Ordinal Numbers · Verb To Be · Personal Information · Nouns (Singular/Plural)</p>
+<div class="card-top">
+  <h1>Examen de Primer Parcial Inglés I</h1>
+  <p class="subtitle">Contesta cada pregunta seleccionando la opción correcta</p>
+  <div class="badges">
+    <span class="badge">Commands</span>
+    <span class="badge">Ordinal Numbers</span>
+    <span class="badge">Verb To Be</span>
+    <span class="badge">Personal Information</span>
+    <span class="badge">Nouns</span>
+  </div>
+</div>
 
 <form id="examForm">
 
@@ -144,7 +268,7 @@
 </div>
 
 <div class="instrucciones">
-  <strong>Instrucciones generales:</strong> Lee cada pregunta y selecciona la opción correcta (a, b, c o d). 30 preguntas, calificación final en escala 0-10.
+  Lee cada pregunta y selecciona la opción correcta (a, b, c o d). 30 preguntas, calificación final en escala 0-10.
 </div>
 
 <h2>I. COMMANDS</h2>
@@ -373,6 +497,8 @@
 </form>
 
 <footer>Fin del examen. Revisa tus respuestas antes de entregar.</footer>
+
+</div>
 
 <script>
   // Reemplaza esta URL con la de tu implementación de Google Apps Script (Deploy > Web app).
