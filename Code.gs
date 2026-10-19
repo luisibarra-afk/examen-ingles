@@ -32,11 +32,15 @@ function doPost(e) {
   ];
 
   var aciertos = 0;
+  var incorrectas = [];
   for (var i = 1; i <= TOTAL_PREGUNTAS; i++) {
     var respuesta = data["q" + i] || "";
-    row.push(respuesta);
-    if (respuesta && respuesta === ANSWER_KEY["q" + i]) {
+    var esCorrecta = respuesta && respuesta === ANSWER_KEY["q" + i];
+    row.push(respuesta ? respuesta : "✗");
+    if (esCorrecta) {
       aciertos++;
+    } else {
+      incorrectas.push(i);
     }
   }
 
@@ -45,6 +49,17 @@ function doPost(e) {
   row.push(calificacion);
 
   sheet.appendRow(row);
+
+  // Marca en rojo las respuestas incorrectas de esta fila
+  var fila = sheet.getLastRow();
+  var COLUMNA_INICIO_PREGUNTAS = 6; // A=Fecha, B=Hora, C=Ap.Paterno, D=Ap.Materno, E=Nombre(s), F=P1...
+  incorrectas.forEach(function (numPregunta) {
+    var columna = COLUMNA_INICIO_PREGUNTAS + (numPregunta - 1);
+    sheet.getRange(fila, columna)
+      .setBackground("#f8d7da")
+      .setFontColor("#c0392b")
+      .setFontWeight("bold");
+  });
 
   return ContentService.createTextOutput(JSON.stringify({ result: "success", aciertos: aciertos, calificacion: calificacion }))
     .setMimeType(ContentService.MimeType.JSON);
