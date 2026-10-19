@@ -93,8 +93,32 @@
     font-style: italic;
     color: #777;
   }
+  #enviar {
+    display: block;
+    margin: 30px auto 10px;
+    padding: 12px 30px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: #2c3e50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #enviar:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+  }
+  #mensaje {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+  }
   @media print {
     h2 { background: #fff !important; color: #000 !important; border: 1px solid #000; }
+    #enviar { display: none; }
   }
 </style>
 </head>
@@ -102,6 +126,8 @@
 
 <h1>Examen de Inglés</h1>
 <p class="subtitle">Commands · Ordinal Numbers · Verb To Be · Personal Information · Nouns (Singular/Plural)</p>
+
+<form id="examForm">
 
 <div class="datos">
   <div class="datos-grid">
@@ -131,8 +157,6 @@
 <div class="instrucciones">
   <strong>Instrucciones generales:</strong> Lee cada pregunta y selecciona la opción correcta (a, b, c o d). Valor total: 50 puntos (1 pt c/u).
 </div>
-
-<form>
 
 <h2>I. COMMANDS (10 pts)</h2>
 
@@ -494,9 +518,59 @@
 <label><input type="radio" name="q50" value="d"> d) deskes</label>
 </div></div>
 
+<button type="submit" id="enviar">Enviar respuestas</button>
+<p id="mensaje"></p>
+
 </form>
 
 <footer>Fin del examen. Revisa tus respuestas antes de entregar.</footer>
+
+<script>
+  // Reemplaza esta URL con la de tu implementación de Google Apps Script (Deploy > Web app).
+  var SCRIPT_URL = "PEGA_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT";
+
+  document.getElementById('examForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var boton = document.getElementById('enviar');
+    var mensaje = document.getElementById('mensaje');
+
+    if (SCRIPT_URL.indexOf('http') !== 0) {
+      mensaje.textContent = 'El formulario aún no está conectado a la hoja de respuestas. Avisa a tu profesor.';
+      mensaje.style.color = '#c0392b';
+      return;
+    }
+
+    var apellidoPaterno = this.querySelector('[name="apellido_paterno"]').value.trim();
+    var apellidoMaterno = this.querySelector('[name="apellido_materno"]').value.trim();
+    var nombres = this.querySelector('[name="nombres"]').value.trim();
+
+    if (!apellidoPaterno || !apellidoMaterno || !nombres) {
+      mensaje.textContent = 'Completa Apellido Paterno, Apellido Materno y Nombre(s) antes de enviar.';
+      mensaje.style.color = '#c0392b';
+      return;
+    }
+
+    boton.disabled = true;
+    boton.textContent = 'Enviando...';
+
+    var formData = new FormData(this);
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(function () {
+      mensaje.textContent = '¡Gracias! Tus respuestas fueron enviadas correctamente.';
+      mensaje.style.color = '#27ae60';
+      boton.textContent = 'Enviado';
+    }).catch(function () {
+      mensaje.textContent = 'Hubo un error al enviar. Intenta de nuevo.';
+      mensaje.style.color = '#c0392b';
+      boton.disabled = false;
+      boton.textContent = 'Enviar respuestas';
+    });
+  });
+</script>
 
 </body>
 </html>
